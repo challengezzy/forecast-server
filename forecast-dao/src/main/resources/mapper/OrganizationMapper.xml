@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demand.driven.mapper.OrganizationMapper">
+
+    <resultMap id="orgMap" type="com.demand.driven.entity.Organization">
+        <id property="id" column="id" javaType="java.lang.Long"></id>
+        <result property="code" column="code" javaType="java.lang.String"></result>
+        <result property="name" column="name" javaType="java.lang.String"></result>
+        <result property="iscatalog" column="iscatalog" javaType="java.lang.Integer"></result>
+        <result property="isvalid" column="isvalid" javaType="java.lang.Integer"></result>
+    </resultMap>
+
+    <select id="getOrganizationByCode" resultMap="orgMap" parameterType="java.lang.String">
+        select id,code,name,isvalid,iscatalog
+         from organization
+        where code = #{code}
+    </select>
+
+
+</mapper>

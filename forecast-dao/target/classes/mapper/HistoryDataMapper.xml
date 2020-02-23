@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demand.driven.mapper.HistoryDataMapper">
+
+    <resultMap id="historyDataMap" type="com.demand.driven.entity.HistoryData">
+        <id property="id" column="id" javaType="java.lang.Long"></id>
+        <result property="version" column="version" javaType="java.lang.Integer"></result>
+        <result property="productId" column="productid" javaType="java.lang.Long"></result>
+        <result property="bizDataId" column="bizDataId" javaType="java.lang.Long"></result>
+        <result property="organizationId" column="organizationId" javaType="java.lang.Long"></result>
+        <result property="period" column="period" javaType="java.lang.String"></result>
+        <result property="value" column="value" javaType="java.lang.Double"></result>
+        <result property="comments" column="comments" javaType="java.lang.String"></result>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,version,productid,bizdataid,organizationId,period,value,comments
+    </sql>
+
+    <!-- 根据产品、组织、业务、期间获取历史数据 -->
+    <select id="getDataByPOBP" resultMap="historyDataMap" parameterType="com.demand.driven.entity.HistoryData">
+        select <include refid="Base_Column_List" />
+        from historydata
+        where productid = #{productId} and bizdataid = #{bizDataId}
+          and organizationId=#{organizationId} and period = #{period}
+    </select>
+
+    <!--  useGeneratedKeys="true" keyProperty="id" keyColumn="id" -->
+    <insert id="insert" parameterType="com.demand.driven.entity.HistoryData">
+        insert into historydata ( version,productid,bizdataid,organizationId,period,value,comments)
+        values ( #{version,jdbcType=VARCHAR}, #{productId,jdbcType=NUMERIC}, #{bizDataId,jdbcType=VARCHAR},
+            #{organizationId,jdbcType=NUMERIC},#{period,jdbcType=NUMERIC},#{value,jdbcType=NUMERIC},
+            #{comments,jdbcType=VARCHAR} )
+    </insert>
+
+    <update id="update" parameterType="com.demand.driven.entity.HistoryData">
+        update historydata
+        <set>
+            value = #{value}, comments= #{comments}
+        </set>
+        where id = #{id}
+    </update>
+
+
+</mapper>

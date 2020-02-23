@@ -1,0 +1,27 @@
+sever:
+  prot: 8080
+
+spring:
+  application:
+    name: forecast-app
+  datasource:
+    url: jdbc:sqlserver://61.129.57.232:1433;databasename=sanquan_dmprod0303
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sanquan
+    password: sanquan123
+
+mybatis:
+  type-aliases-package: com.demand.driven.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration.map-underscore-to-camel-case: true
+
+logging:
+  level:
+    web: debug
+
+is_dev_env: false
+
+app_config:
+  appIdKey: 10016
+  signKey: sanquan123
+

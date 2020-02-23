@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forecast-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forecast-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forecast-app/src/main/java/com/demand/driven/util/ServletUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forecast-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forecast-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forecast-service" charset="UTF-8" />
+  </component>
+</project>

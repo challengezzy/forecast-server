@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demand.driven.mapper.UnitMapper">
+
+    <resultMap id="unitMap" type="com.demand.driven.entity.Unit">
+        <id property="id" column="id" javaType="java.lang.Long"></id>
+        <result property="code" column="code" javaType="java.lang.String"></result>
+        <result property="name" column="name" javaType="java.lang.String"></result>
+    </resultMap>
+
+    <select id="getUnitByCode" resultMap="unitMap" parameterType="java.lang.String">
+        select id,code,name from unit
+        where code = #{code}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ForecastServer.iml" filepath="$PROJECT_DIR$/ForecastServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forecast-api/forecast-api.iml" filepath="$PROJECT_DIR$/forecast-api/forecast-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forecast-app/forecast-app.iml" filepath="$PROJECT_DIR$/forecast-app/forecast-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forecast-common/forecast-common.iml" filepath="$PROJECT_DIR$/forecast-common/forecast-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forecast-dao/forecast-dao.iml" filepath="$PROJECT_DIR$/forecast-dao/forecast-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forecast-service/forecast-service.iml" filepath="$PROJECT_DIR$/forecast-service/forecast-service.iml" />
+    </modules>
+  </component>
+</project>
